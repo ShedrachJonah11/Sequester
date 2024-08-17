@@ -1,8 +1,8 @@
 "use client";
-import { Button, Progress } from "@nextui-org/react";
+import { Button, forwardRef, Progress } from "@nextui-org/react";
 import React, { useState } from "react";
 
-export default function Product() {
+const Product = forwardRef((props, ref) => {
   const [showProcessTextResult, setShowProcessTextResult] = useState(false);
   const [showDetectAIResult, setShowDetectAIResult] = useState(false);
   const [aiDetection, setAIDetection] = useState({
@@ -26,7 +26,11 @@ export default function Product() {
     });
   };
   return (
-    <section className="bg-gray-100 mt-4 md:mt-24 py-12">
+    <section
+      id="products"
+      ref={ref}
+      className="bg-gray-100 mt-4 md:mt-24 py-12"
+    >
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-gray-900">Our Products</h1>
         <p className="mt-4 text-lg p-2 text-gray-500">
@@ -114,10 +118,10 @@ export default function Product() {
                 TextOrigin is designed to empower users in protecting their
                 privacy. It allows you to check the likely source of a text,
                 helping you make informed decisions about the content you
-                encounter. This tool isn't about judging the use of AI or other
-                writing aids, but about giving you control over your information
-                and understanding the nature of the content you're interacting
-                with.
+                encounter. This tool isn&apos;t about judging the use of AI or
+                other writing aids, but about giving you control over your
+                information and understanding the nature of the content
+                you&apos;re interacting with.
               </p>
               <textarea
                 placeholder="Enter your text here..."
@@ -167,4 +171,8 @@ export default function Product() {
       </div>
     </section>
   );
-}
+});
+
+Product.displayName = "Product";
+
+export default Product;

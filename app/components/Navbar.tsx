@@ -14,10 +14,14 @@ export default function Navbar() {
         <div className="flex items-center space-x-10 ">
           <Image src={Logo} alt="Logo" className="h-10 w-auto" />
           <div className="hidden md:flex space-x-10">
-            <Link href="#" className="hover:underline font-medium text-white">
+            <Link
+              href="#products"
+              scroll={false}
+              className=" font-medium text-white"
+            >
               Products
             </Link>
-            <Link href="#" className="hover:underline font-medium text-white">
+            <Link href="#" className="font-medium text-white">
               About
             </Link>
           </div>
