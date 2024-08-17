@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Logo from "../images/logo.svg";
+import Link from "next/link";
+import { Button } from "@nextui-org/react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,27 +14,27 @@ export default function Navbar() {
         <div className="flex items-center space-x-10 ">
           <Image src={Logo} alt="Logo" className="h-10 w-auto" />
           <div className="hidden md:flex space-x-10">
-            <a href="#" className="hover:underline font-medium text-white">
+            <Link href="#" className="hover:underline font-medium text-white">
               Products
-            </a>
-            <a href="#" className="hover:underline font-medium text-white">
+            </Link>
+            <Link href="#" className="hover:underline font-medium text-white">
               About
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex space-x-4">
-          <a
+          <Button
             href="#"
             className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-7"
           >
             Sign in
-          </a>
-          <a
+          </Button>
+          <Button
             href="#"
             className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50"
           >
             Sign up
-          </a>
+          </Button>
         </div>
       </nav>
     </header>

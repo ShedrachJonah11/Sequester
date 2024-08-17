@@ -149,10 +149,10 @@ export default function Product() {
                   </p>
                   {/* NextUI Progress Bar */}
                   <div className="mt-2">
-                    <div className="w-full bg-gray-300 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
                       <div
                         className={
-                          "h-3 rounded-full bg-indigo-600 transition-all duration-700 ease-in-out"
+                          "h-4 rounded-full bg-indigo-600 transition-all duration-700 ease-in-out"
                         }
                         style={{ width: `${aiDetection.confidence}%` }}
                       ></div>
