@@ -23,18 +23,18 @@ export default function Hero() {
             Protect Your Writing, <br />
             <span className="text-indigo-200">Preserve Your Privacy</span>
           </h1>
-          <p className="text-lg max-w-[800px] text-indigo-200 md:text-xl mb-8">
+          <p className="text-xl md:max-w-[800px] max-w-[400px] p-2 text-indigo-200 md:text-xl mb-8">
             Sequester empowers you to write freely, without judgment on your
             methods. Because what matters is the quality of your work, not how
             you created it.
           </p>
-          <div className="flex flex-col md:flex-row space-x-0 md:space-x-5 space-y-4 md:space-y-0 mt-2">
-            <Button className="bg-white text-indigo-600 font-bold py-6 px-8 rounded-md hover:bg-gray-200 transition duration-300">
+          <div className="flex flex-col md:flex-row space-x-0 md:space-x-5 space-y-4 md:space-y-0 mt-2 w-full md:w-auto">
+            <Button className="w-full md:w-auto bg-white text-indigo-600 font-bold py-6 px-8 rounded-md hover:bg-gray-200 transition duration-300">
               <Link href={"/#"} className="text-base font-light">
                 Get Started
               </Link>
             </Button>
-            <Button className="bg-indigo-500 text-white font-bold py-6 px-8 rounded-md bg-opacity-60 hover:bg-indigo-700 transition duration-300">
+            <Button className="w-full md:w-auto bg-indigo-500 text-white font-bold py-6 px-8 rounded-md bg-opacity-60 hover:bg-indigo-700 transition duration-300">
               <Link href={"/#"} className="text-base font-light">
                 Learn more
               </Link>
