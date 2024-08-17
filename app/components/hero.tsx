@@ -1,5 +1,7 @@
 import Image from "next/image";
 import img from "../images/heroimg.avif";
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -25,18 +27,12 @@ export default function Hero() {
             you created it.
           </p>
           <div className="flex flex-col md:flex-row space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-            <a
-              href="#"
-              className="bg-white text-indigo-600 font-bold py-4 px-6 rounded-lg hover:bg-gray-200 transition duration-300"
-            >
-              Get started
-            </a>
-            <a
-              href="#"
-              className="bg-indigo-500 text-white font-bold py-4 px-6 rounded-lg opacity-80 hover:bg-indigo-700 transition duration-300"
-            >
-              Learn more
-            </a>
+            <Button className="bg-white text-indigo-600 font-bold py-7 px-10 rounded-lg hover:bg-gray-200 transition duration-300">
+              <Link href={""} className="text-base">Get started</Link>
+            </Button>
+            <Button className="bg-indigo-500 text-white font-bold py-7 px-10 rounded-lg opacity-80 hover:bg-indigo-700 transition duration-300">
+              <Link href={""} className="text-base">Learn more</Link>
+            </Button>
           </div>
         </div>
       </section>

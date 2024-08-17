@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function Why() {
   return (
-    <section className="bg-white mt-24 py-12">
+    <section className="bg-white md:mt-24 mt-4 py-12">
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-gray-900">
           Why Choose Sequester?
