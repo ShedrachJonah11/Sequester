@@ -16,12 +16,13 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-10">
             <Link
               href="#products"
-              scroll={false}
+              passHref
+              scroll={true}
               className=" font-medium text-white"
             >
               Products
             </Link>
-            <Link href="#" className="font-medium text-white">
+            <Link href="#about" className="font-medium text-white">
               About
             </Link>
           </div>

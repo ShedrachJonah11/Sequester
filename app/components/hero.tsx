@@ -30,12 +30,12 @@ export default function Hero() {
           </p>
           <div className="flex flex-col md:flex-row space-x-0 md:space-x-5 space-y-4 md:space-y-0 mt-2 w-full md:w-auto">
             <Button className="w-full md:w-auto bg-white text-indigo-600 font-bold py-6 px-8 rounded-md hover:bg-gray-200 transition duration-300">
-              <Link href={"/#"} className="text-base font-light">
+              <Link href="#products" className="text-base font-light">
                 Get Started
               </Link>
             </Button>
             <Button className="w-full md:w-auto bg-indigo-500 text-white font-bold py-6 px-8 rounded-md bg-opacity-60 hover:bg-indigo-700 transition duration-300">
-              <Link href={"/#"} className="text-base font-light">
+              <Link href="#about" className="text-base font-light">
                 Learn more
               </Link>
             </Button>

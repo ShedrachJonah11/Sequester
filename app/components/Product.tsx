@@ -1,8 +1,8 @@
 "use client";
-import { Button, forwardRef, Progress } from "@nextui-org/react";
+import { Button, Progress } from "@nextui-org/react";
 import React, { useState } from "react";
 
-const Product = forwardRef((props, ref) => {
+const Product = () => {
   const [showProcessTextResult, setShowProcessTextResult] = useState(false);
   const [showDetectAIResult, setShowDetectAIResult] = useState(false);
   const [aiDetection, setAIDetection] = useState({
@@ -26,11 +26,7 @@ const Product = forwardRef((props, ref) => {
     });
   };
   return (
-    <section
-      id="products"
-      ref={ref}
-      className="bg-gray-100 mt-4 md:mt-24 py-12"
-    >
+    <section id="products" className="bg-gray-100 mt-4 md:mt-24 py-12">
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-gray-900">Our Products</h1>
         <p className="mt-4 text-lg p-2 text-gray-500">
@@ -171,8 +167,6 @@ const Product = forwardRef((props, ref) => {
       </div>
     </section>
   );
-});
-
-Product.displayName = "Product";
+};
 
 export default Product;
