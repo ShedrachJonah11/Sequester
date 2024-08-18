@@ -29,13 +29,13 @@ const Product = () => {
     <section id="products" className="bg-gray-100 mt-4 md:mt-24 py-12">
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-gray-900">Our Products</h1>
-        <p className="mt-4 text-lg p-2 text-gray-500">
+        <p className="mt-2 text-lg p-2 text-gray-500">
           Empowering your writing process and protecting your privacy
         </p>
       </div>
 
       <div className="justify-center items-center flex">
-        <div className="flex flex-col md:flex-row px-4 md:px-32 mt-12 space-y-4 md:space-x-20 md:space-y-0">
+        <div className="flex flex-col md:flex-row px-4 md:px-32 mt-12 space-y-4 md:space-x-2 md:space-y-0">
           {/* WritingPrivacy section */}
           <div className="flex-1 md:flex md:items-start md:space-x-4">
             <div>
@@ -57,8 +57,10 @@ const Product = () => {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">WritingPrivacy</h1>
-              <p className="max-w-lg mt-2 text-base text-gray-500">
+              <h1 className="text-lg font-medium text-gray-900 mt-2 md:mt-0">
+                WritingPrivacy
+              </h1>
+              <p className="max-w-xl mt-2 text-base text-gray-500">
                 WritingPrivacy ensures your writing process remains private. We
                 believe that the quality of your work is what truly matters, not
                 the tools or methods you use to create it. Whether you use Word,
@@ -109,8 +111,10 @@ const Product = () => {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">TextOrigin</h1>
-              <p className="max-w-lg mt-2 text-base text-gray-500">
+              <h1 className="text-lg font-medium text-gray-900 mt-2 md:mt-0">
+                TextOrigin
+              </h1>
+              <p className="max-w-xl mt-2 text-base text-gray-500">
                 TextOrigin is designed to empower users in protecting their
                 privacy. It allows you to check the likely source of a text,
                 helping you make informed decisions about the content you
