@@ -13,8 +13,8 @@ export default function Why() {
         </p>
       </div>
 
-      <div className="justify-center items-center flex">
-        <div className="flex flex-col md:flex-row px-4 md:px-60 mt-12 space-y-4 md:space-x-20 md:space-y-0">
+      <div className="justify-center items-center flex mb-10">
+        <div className="flex flex-col md:flex-row px-4 md:px-60 mt-12 space-y-4 md:space-x-2 md:space-y-0">
           {/* WritingPrivacy section */}
           <div className="flex-1 md:flex md:items-start md:space-x-4">
             <div>
@@ -36,7 +36,7 @@ export default function Why() {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">
+              <h1 className="text-lg leading-6 font-medium text-gray-900 mt-2 md:mt-0">
                 Cutting-edge AI
               </h1>
               <p className="max-w-xl mt-2 text-base text-gray-500">
@@ -66,7 +66,9 @@ export default function Why() {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">High Accuracy</h1>
+              <h1 className="text-lg leading-6 font-medium text-gray-900 mt-2 md:mt-0">
+                High Accuracy
+              </h1>
               <p className="max-w-xl mt-2 text-base text-gray-500">
                 Our tools provide unparalleled precision in both privacy
                 protection and AI detection, ensuring reliable results.
@@ -93,7 +95,9 @@ export default function Why() {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">User-Friendly</h1>
+              <h1 className="text-lg leading-6 font-medium text-gray-900 mt-2 md:mt-0">
+                User-Friendly
+              </h1>
               <p className="max-w-xl mt-2 text-base text-gray-500">
                 Experience our intuitive and easy-to-use interface, designed
                 with your convenience in mind.
@@ -120,7 +124,9 @@ export default function Why() {
             </div>
             <div>
               {/* Content */}
-              <h1 className="text-xl font-bold mt-2 md:mt-0">Expert Support</h1>
+              <h1 className="text-lg leading-6 font-medium text-gray-900 mt-2 md:mt-0">
+                Expert Support
+              </h1>
               <p className="max-w-xl mt-2 text-base text-gray-500">
                 Our dedicated customer support team is always ready to assist
                 you with any questions or concerns.
