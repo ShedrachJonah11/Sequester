@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <head>{/* You can add meta tags, title, etc. here */}</head>
       <body className={inter.className}>
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider>
+          {children}
+          <ToastContainer /> {/* Add ToastContainer here */}
+        </NextUIProvider>
       </body>
     </html>
   );

@@ -1,11 +1,14 @@
 "use client";
-import { Button, Progress } from "@nextui-org/react";
-import React, { useState } from "react";
+import { Button, Skeleton } from "@nextui-org/react";
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import processText from "../api/utility";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const [showProcessTextResult, setShowProcessTextResult] = useState(false);
   const [showDetectAIResult, setShowDetectAIResult] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [aiDetection, setAIDetection] = useState({
     detected: false, // To track if AI was detected
     confidence: 50, // Assuming a confidence level percentage
@@ -13,27 +16,45 @@ const Product = () => {
 
   const [processedText, setProcessedText] = useState("");
   const [textInput, setTextInput] = useState("");
+  const [displayedText, setDisplayedText] = useState("");
+
+  const typewriterEffect = async (text: string) => {
+    for (let i = 0; i <= text.length; i++) {
+      setDisplayedText(text.substring(0, i));
+      await new Promise((resolve) => setTimeout(resolve, 50)); // Adjust speed here
+    }
+  };
 
   const handleProcessTextClick = async () => {
+    setIsLoading(true);
+    setShowProcessTextResult(false);
+    setDisplayedText("");
+
     try {
       const paraphrased = await processText(textInput); // Pass the textarea input to the API call
       setProcessedText(paraphrased);
       setShowProcessTextResult(true);
+      typewriterEffect(paraphrased);
+      toast.success("Text processed successfully!"); // Success toast
     } catch (error) {
       console.error("Failed to process text:", error);
+      toast.error("Failed to process text. Please try again."); // Error toast
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleDetectAIClick = () => {
-    setShowDetectAIResult(true);
-    setAIDetection((prev) => {
-      // assume confidence randomly increases or decreases by 10%
-      const newConfidence = prev.confidence === 75 ? 50 : 75;
-      return {
-        detected: !prev.detected,
-        confidence: newConfidence,
-      };
-    });
+    // setShowDetectAIResult(true);
+    // setAIDetection((prev) => {
+    //   // assume confidence randomly increases or decreases by 10%
+    //   const newConfidence = prev.confidence === 75 ? 50 : 75;
+    //   return {
+    //     detected: !prev.detected,
+    //     confidence: newConfidence,
+    //   };
+    // });
+    alert("AI Detection feature is coming soon!");
   };
   return (
     <section id="products" className="bg-gray-100 mt-4 md:mt-24 py-12">
@@ -93,10 +114,18 @@ const Product = () => {
                 Process Text
               </Button>
 
-              {showProcessTextResult && (
+              {isLoading && (
+                <div className="w-full bg-white mt-4 p-4 rounded-lg shadow-md">
+                  <Skeleton className="h-6 mb-2 w-full" />
+                  <Skeleton className="h-6 mb-2 w-3/4" />
+                  <Skeleton className="h-6 w-1/2" />
+                </div>
+              )}
+
+              {showProcessTextResult && !isLoading && (
                 <div className="w-full bg-white mt-4 p-4 rounded-lg shadow-md">
                   <h1 className="font-bold">Modified Text:</h1>
-                  <p className="text-bold">{processedText}</p>
+                  <animated.p className="text-bold">{displayedText}</animated.p>
                 </div>
               )}
             </div>
@@ -142,9 +171,10 @@ const Product = () => {
               />
               <Button
                 onClick={handleDetectAIClick}
+                disabled={true}
                 className="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 "
               >
-                Detect AI
+                Detect AI (Coming Soon)
               </Button>
 
               {showDetectAIResult && (
