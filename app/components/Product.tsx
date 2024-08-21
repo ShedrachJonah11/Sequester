@@ -1,6 +1,7 @@
 "use client";
 import { Button, Progress } from "@nextui-org/react";
 import React, { useState } from "react";
+import processText from "../api/utility";
 
 const Product = () => {
   const [showProcessTextResult, setShowProcessTextResult] = useState(false);
@@ -10,8 +11,17 @@ const Product = () => {
     confidence: 50, // Assuming a confidence level percentage
   });
 
-  const handleProcessTextClick = () => {
-    setShowProcessTextResult(true);
+  const [processedText, setProcessedText] = useState("");
+  const [textInput, setTextInput] = useState("");
+
+  const handleProcessTextClick = async () => {
+    try {
+      const paraphrased = await processText(textInput); // Pass the textarea input to the API call
+      setProcessedText(paraphrased);
+      setShowProcessTextResult(true);
+    } catch (error) {
+      console.error("Failed to process text:", error);
+    }
   };
 
   const handleDetectAIClick = () => {
@@ -73,6 +83,8 @@ const Product = () => {
                 placeholder="Enter your text here..."
                 className="w-full bg-white border border-gray-300 rounded-md mt-4 p-2"
                 rows={4}
+                value={textInput}
+                onChange={(e) => setTextInput(e.target.value)}
               />
               <Button
                 onClick={handleProcessTextClick}
@@ -84,7 +96,7 @@ const Product = () => {
               {showProcessTextResult && (
                 <div className="w-full bg-white mt-4 p-4 rounded-lg shadow-md">
                   <h1 className="font-bold">Modified Text:</h1>
-                  <p className="text-bold"></p>
+                  <p className="text-bold">{processedText}</p>
                 </div>
               )}
             </div>
