@@ -21,7 +21,7 @@ const Product = () => {
   const typewriterEffect = async (text: string) => {
     for (let i = 0; i <= text.length; i++) {
       setDisplayedText(text.substring(0, i));
-      await new Promise((resolve) => setTimeout(resolve, 50)); // Adjust speed here
+      await new Promise((resolve) => setTimeout(resolve, 5)); // Adjust speed here
     }
   };
 
@@ -35,7 +35,6 @@ const Product = () => {
       setProcessedText(paraphrased);
       setShowProcessTextResult(true);
       typewriterEffect(paraphrased);
-      toast.success("Text processed successfully!"); // Success toast
     } catch (error) {
       console.error("Failed to process text:", error);
       toast.error("Failed to process text. Please try again."); // Error toast
@@ -123,7 +122,7 @@ const Product = () => {
               )}
 
               {showProcessTextResult && !isLoading && (
-                <div className="w-full bg-white mt-4 p-4 rounded-lg shadow-md">
+                <div className="max-w-xl w-full bg-white mt-4 p-4 rounded-lg shadow-md">
                   <h1 className="font-bold">Modified Text:</h1>
                   <animated.p className="text-bold">{displayedText}</animated.p>
                 </div>
@@ -172,7 +171,7 @@ const Product = () => {
               <Button
                 onClick={handleDetectAIClick}
                 disabled={true}
-                className="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 "
+                className="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-gray-400 bg-gray-200 cursor-not-allowed"
               >
                 Detect AI (Coming Soon)
               </Button>
